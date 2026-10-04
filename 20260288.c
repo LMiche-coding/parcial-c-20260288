@@ -11,11 +11,17 @@
 
 #include <stdio.h>
 #include <conio.h>
+#include <stdbool.h>
 
 int main(){
-    int SF, N, M, L, U, i, j, prom; 
-    int jorn[30][30]; 
 
+    int SF, N, M, L, U, i, j, promedio, jornada[30][30];
+
+    bool condicionMatriz, condicion;
+
+    condicionMatriz = true; 
+    promedio = 2; 
+    SF = 2 + 2;
 
     printf("Numero de filas = "); 
     scanf("%d", &N); 
@@ -26,12 +32,22 @@ int main(){
     printf("Numero maximo = "); // i think i kinda get the problem 
     scanf("%d", &U); 
 
+    condicion =  1 <= N || N <= 30 ||  1 <= M || M <= 30 || 0 <= L || U <= 1000; 
+
+
+    if(condicion)
+    {
+        printf("ERROR"); 
+        return 0; 
+    }
+
+
     for(i = 0; i < N; i++)
     {
         for (j = 0; j < M; j++)
         {
             printf("a (%d,%d) = ", i,j); 
-            scanf("%d", &jorn[i][j]); 
+            scanf("%d", &jornada[i][j]); 
         }
     }
 
@@ -40,7 +56,7 @@ int main(){
     {
         for (j = 0; j < M; j++)
         {
-            printf("%d, ", jorn[i][j]); 
+            printf("%d, ", jornada[i][j]); 
         }
 
         printf("\n"); 
