@@ -15,12 +15,9 @@
 
 int main(){
 
-    int SF, N, M, L, U, i, j, promedio, jornada[30][30];
-
+    int SF, N, M, L, U, i, j, jornada[30][30];
     bool condicionMatriz, condicion;
-
-    condicionMatriz = true; 
-    promedio = 2; 
+ 
     SF = 2 + 2;
 
     printf("Numero de filas = "); 
@@ -32,7 +29,8 @@ int main(){
     printf("Numero maximo = "); // i think i kinda get the problem 
     scanf("%d", &U); 
 
-    condicion =  1 <= N || N <= 30 ||  1 <= M || M <= 30 || 0 <= L || U <= 1000; 
+    condicion =  N < 1 || N > 30 || M < 1 || M > 30 || L < 0 || U > 1000; 
+    // condicionMatriz = jornada[i][j] < 0 || jornada [i][j] > 1000; 
 
 
     if(condicion)
@@ -42,12 +40,38 @@ int main(){
     }
 
 
-    for(i = 0; i < N; i++)
+    for(i = 0; i < N; i++) // toma los datos de la matriz y valida que cumple con las restricciones
+    {
+        SF = 0;
+
+        for (j = 0; j < M; j++)
+        { 
+            printf("a (%d,%d) = ", i,j); 
+            scanf("%d", &jornada[i][j]); 
+
+            if (jornada[i][j] < 0 || jornada [i][j] > 1000)
+            {
+                printf("ERROR"); 
+                return 0; 
+            }
+
+            
+            SF = SF + jornada[i][j]; 
+            printf("%d\n", SF); 
+              
+        }
+    }
+
+    for(i = 0; i < N; i++) // verifica si hay un evento
     {
         for (j = 0; j < M; j++)
         {
-            printf("a (%d,%d) = ", i,j); 
-            scanf("%d", &jornada[i][j]); 
+            int x = jornada[i][j]; // es la posicion en la matriz
+
+            if (SF-M*x >= M*L && x <= U) 
+            {
+                printf("Hay evento mis amoreeeeeeeeeeeeeeees \n");
+            }
         }
     }
 
