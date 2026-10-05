@@ -7,20 +7,21 @@
 /*  Fecha:     13/10/2026                                 */                       
 /* Link Practica: https://github.com/LMiche-coding/parcial-c-20260288 */
 /**********************************************************/
-/*
-*
-*
-*
-*
-*
-*
-*
-*/
+/*****************************************************************************//*!
+   *
+   * @brief funcion principal. 
+   *        
+   * @param[in] recive 'N', 'M', 'L' y 'U' como parametros.  
+   *
+   * @return devuelve un entero que puede ser utilizado como indicador de error
+   *
+   * @Pass/ Fail criteria:  none.
+*****************************************************************************/
 
 
-#include <stdio.h>
-#include <conio.h>
-#include <stdbool.h>
+#include <stdio.h> // libreria que permite trabajar con entradas y salidas 
+#include <conio.h> // libreria que permite trabajar con periferico
+#include <stdbool.h> // libreria que permite trabajar con variables booleanas
 
 int main(){
 
@@ -44,7 +45,7 @@ int main(){
 
     eventos = 0; 
 
-    scanf("%d", &N); 
+    scanf("%d", &N);  //Función estándar de la librería I/O de C que lee los datos introducidos
     scanf("%d", &M); 
     scanf("%d", &L); 
     scanf("%d", &U); 
@@ -105,7 +106,7 @@ int main(){
 
                 if (racha > rachaMayor)
                 {
-                    rachaMayor = racha;
+                    rachaMayor = racha; 
                     inicio = j - racha + 2; 
                     eventos = eventos + 1; 
                 }
@@ -123,9 +124,6 @@ int main(){
 
     } // fin de for 
 
-    int filaPrioritaria = 0; 
-
-
     for (i = 0; i < N; i++) // reporte 1.ra parte
     {
         fila = i + 1; 
@@ -136,6 +134,8 @@ int main(){
     {
         printf(" %d", columnaEvento[j]);
     }
+
+        int filaPrioritaria = 0; 
 
     if (eventos == 0) // Comprueba primero si hay eventos, sino comprueba la fila con prioridad en el informe 
     {
@@ -167,9 +167,6 @@ int main(){
         getch(); return 0; 
     }
 
-
-
-
     /*printf("Salida \n"); 
     for (i=0; i<N; i++)
     {
@@ -180,6 +177,5 @@ int main(){
 
         printf("\n"); 
     }*/
-
 
 }
