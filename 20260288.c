@@ -25,14 +25,22 @@
 int main(){
 
     int SF, N, M, L, U, i, j, fila, racha, rachaMayor, inicio, eventos;  
+    /*
+    SF = suma de las filas 
+    N = filas
+    M = columna
+    L = que tanto puede estar debajo del promedio
+    U = el numero maximo que debe de tener para ser un evento
+    */
+   
     int jornada[30][30]; // La matriz que se va a analizar
-    int columnaEvento[30] = {0}; 
-    int filasEvento[30] = {0}; 
-    int listaracha[30] = {0}; 
-    int listainicio[30] = {0};
-    int impacto[30] = {0}; 
+    int columnaEvento[30] = {0}; // eventos por columna
+    int filasEvento[30] = {0}; // eventos por fila
+    int listaracha[30] = {0}; // racha por columna
+    int listainicio[30] = {0}; // la columna con la mejor racha 
+    int impacto[30] = {0}; // el impacto por fila
 
-    bool condicion;
+    bool condicion; // variable booleana 
 
     eventos = 0; 
 
@@ -45,7 +53,7 @@ int main(){
     printf("Numero maximo = "); // i think i kinda get the problem 
     scanf("%d", &U); 
 
-    condicion =  N < 1 || N > 30 ||
+    condicion =  N < 1 || N > 30 || // restriccion especifica del reto
                  M < 1 || M > 30 ||
                  L < 0 || U > 1000; 
 
