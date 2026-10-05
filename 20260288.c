@@ -32,7 +32,7 @@ int main(){
     L = que tanto puede estar debajo del promedio
     U = el numero maximo que debe de tener para ser un evento
     */
-   
+
     int jornada[30][30]; // La matriz que se va a analizar
     int columnaEvento[30] = {0}; // eventos por columna
     int filasEvento[30] = {0}; // eventos por fila
@@ -44,13 +44,9 @@ int main(){
 
     eventos = 0; 
 
-    printf("Numero de filas = "); 
     scanf("%d", &N); 
-    printf("Numero de columnas = "); 
     scanf("%d", &M); 
-    printf("Umbral = "); 
     scanf("%d", &L); 
-    printf("Numero maximo = "); // i think i kinda get the problem 
     scanf("%d", &U); 
 
     condicion =  N < 1 || N > 30 || // restriccion especifica del reto
@@ -68,7 +64,6 @@ int main(){
 
         for (j = 0; j < M; j++)
         { 
-            printf("a (%d,%d) = ", i,j); 
             scanf("%d", &jornada[i][j]); 
 
             if (jornada[i][j] < 0 || jornada [i][j] > 1000)
