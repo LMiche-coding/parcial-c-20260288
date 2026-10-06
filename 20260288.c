@@ -52,7 +52,8 @@ int main(){
 
     condicion =  N < 1 || N > 30 || // restriccion especifica del reto
                  M < 1 || M > 30 ||
-                 L < 0 || U > 1000; 
+                 L < 0 || U > 1000 || 
+                 L > U; 
 
     if(condicion)
     {
@@ -103,12 +104,12 @@ int main(){
                 impacto[i] = impacto[i] + SF - M * x + 1; // calcula el impacto
                 columnaEvento[j] = columnaEvento[j] + 1; // calcula los eventos por la columna
                 racha = racha + 1; 
+                eventos = eventos + 1; 
 
                 if (racha > rachaMayor)
                 {
                     rachaMayor = racha; 
                     inicio = j - racha + 2; 
-                    eventos = eventos + 1; 
                 }
                 
 
