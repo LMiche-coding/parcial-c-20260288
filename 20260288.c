@@ -11,7 +11,7 @@
    *
    * @brief funcion principal. 
    *        
-   * @param[in] recive 'N', 'M', 'L' y 'U' como parametros.  
+   * @param[in] recive ninguno 
    *
    * @return devuelve un entero que puede ser utilizado como indicador de error
    *
@@ -85,7 +85,6 @@ int main(){
         racha = 0; 
         rachaMayor = 0;
         inicio = 0; 
-     
 
         
         for(j = 0; j < M; j++)

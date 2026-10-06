@@ -1,0 +1,10 @@
+caso 1
+
+la unica fila que cumple con un evento es la primera [0, 10, 10], 
+porque 0 esta por debajo del promedio y es menor que L (4), 
+
+caso 2 
+
+La restricción indica que ni 'N' ni 'M', pueden ser menores a 1
+
+por eso va directo a error
